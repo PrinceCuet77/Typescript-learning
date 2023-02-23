@@ -1,0 +1,12 @@
+{
+  "name": "10.reallifeprojectexample",
+  "version": "1.0.0",
+  "description": "1. use -> tsc --init After that tsconfig.json file will be created.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
