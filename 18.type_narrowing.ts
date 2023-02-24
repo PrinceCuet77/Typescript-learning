@@ -29,19 +29,48 @@ function printAll(strs: string | string[] | null) {
 // ----------------------------------------------------------
 // The in operator narrowing.
 interface User {
-    name: string,
+    name: string
     email: string
 }
 
 interface Admin {
     name: string
-    email: string 
+    email: string
     isAdmin: boolean
 }
 
 function isAdmin(account: User | Admin) {
-    if ("isAdmin" in account) {
+    if ('isAdmin' in account) {
         return account.isAdmin
     }
     return account.email
 }
+
+// ---------------------------------------------------------
+function logValue(x: Date | string) {
+    if (x instanceof Date) {
+        console.log(x.toUTCString())
+    } else {
+        console.log(x.toUpperCase())
+    }
+}
+
+// --------------------------------------------------------
+type Fish = { swim: () => void }
+type Bird = { fly: () => void }
+
+function isFish(pet: Fish | Bird): pet is Fish {
+    return (pet as Fish).swim !== undefined // Type casting like (pet as Fish)
+}
+
+function getFood(pet: Fish | Bird) {
+    if (isFish(pet)) {
+        pet
+        return 'fish food'
+    } else {
+        pet
+        return 'bird food'
+    }
+}
+
+export {}
