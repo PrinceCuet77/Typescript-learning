@@ -1,28 +1,18 @@
-class Department {
-    private employees: string[] = [] // 'private'
+// Question: Why should I use interface with class?
+// Answer: Interface ensures that a class must use the property or method of its own.
+interface Greetable {
+    name: string
 
-    // This means:
-    // private readonly id: string
-    // public name: string
-    constructor(private readonly id: string, public name: string) {} // I can't change the value of 'id' after initializing at first.
+    greet(phrase: string): void
+}
 
-    describe() {
-        console.log(`Department: (${this.id}: ${this.name})`)
-    }
+// I can implement multiple interface with class using comma like: class Person implements Interface1, Interface2 {}
+class Person implements Greetable {
+    name: string
 
-    addEmployee(employee: string) {
-        this.employees.push(employee)
-    }
-
-    printEmployeeInformation() {
-        console.log(this.employees.length, this.employees)
+    greet(phrase: string) {
+        console.log(phrase + ' ' + this.name)
     }
 }
 
-const accounting = new Department('D1', 'Accounting')
-accounting.describe() // Output: Department: (D1: Accounting)
-
-accounting.addEmployee('Max')
-accounting.addEmployee('Manu')
-
-accounting.printEmployeeInformation() // Output: 2 [ 'Max', 'Manu' ]
+// user1.greet('Hi there - I am') // Output: Hi there - I am Max
