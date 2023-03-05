@@ -6,11 +6,11 @@ interface Person {
     age: number
     // dummyValue: string = 'Dummy' // I can't declare value
 
-    greet(phrase: string): void // Just function signature
+    greet(phrase: string): void // Just function signature otherwise will show an error
 }
 
 // Create an object of interface 'Person'
-let user1 = {
+let user1: Person = {
     name: 'Max',
     age: 20,
     greet(phrase: string) {

@@ -20,6 +20,7 @@ class Department {
 }
 
 // Inheritance ('ITDepartment' class get all the properties & methods from 'Department' class)
+// Note: I can't extend multiple classes in one class.
 class ITDepartment extends Department {
     constructor(id: string, name: string, public admins: string[]) {
         super(id, name) // Must use that method and it calls the constructor of 'Department' class automatically.
