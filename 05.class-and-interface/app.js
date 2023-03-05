@@ -1,29 +1,14 @@
-class Department {
-    constructor(id, name, employees) {
-        this.id = id;
-        this.name = name;
-        this.employees = employees;
-    }
-    describe() {
-        console.log(`Department: (${this.id}: ${this.name})`);
-    }
-    addEmployee(employee) {
-        this.employees.push(employee);
-    }
-    printEmployeeInformation() {
-        console.log(this.employees.length, this.employees);
-    }
+// let age = 20
+// console.log(isOk) // Output: undefined
+// if (age > 15) {
+//     var isOk = true
+// }
+// console.log(isOk) // Output: true
+// But ----------------
+var age2 = 20;
+// console.log(isOk2)
+var isOk2;
+if (age2 > 15) {
+    isOk2 = true;
 }
-// Inheritance ('ITDepartment' class get all the properties & methods from 'Department' class)
-class ITDepartment extends Department {
-    constructor(id, name, admins) {
-        super(id, name, admins); // Must use that method and it calls the constructor of 'Department' class automatically.
-        this.admins = admins;
-    }
-}
-// const accounting = new Department('D1', 'Accounting')
-const it = new ITDepartment('D1', 'IT', ['Max']); // I can use like that.
-it.describe(); // Output: Department: (D1: IT)
-it.addEmployee('Maximillan');
-it.addEmployee('Manu');
-it.printEmployeeInformation(); // Output: 2 [ 'Max', 'Manu' ]
+console.log(isOk2);
